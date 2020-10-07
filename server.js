@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(cors())
 
 // DB config
-const conn = 'mongodb+srv://dakom1:msngr@cluster0.lpas2.mongodb.net/msngr-app?retryWrites=true&w=majority';
+const conn = process.env.CONN_URL;
 // const conn = process.env.CONN_URL;
 
 mongoose.connect(conn,{
