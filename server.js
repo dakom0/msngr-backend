@@ -9,10 +9,11 @@ import Pusher from 'pusher'
 const app = express();
 const port = process.env.PORT || 8000;
 dotenv.config()
+const key = process.env.KEY;
 
 const pusher = new Pusher({
     appId: '1086129',
-    key: 'b7fcde096976d3f8df9e',
+    key: key,
     secret: '724ccde55e04986282a7',
     cluster: 'mt1',
     useTLS: true
@@ -73,4 +74,4 @@ app.get('/save/conversation', (req, res)=> {
 });
 
 // listen
-app.listen(port, ()=>console.log(`listening on localhost: ${port} ${conn}`))
+app.listen(port, ()=>console.log(`listening on localhost: ${port}`))
